@@ -129,24 +129,42 @@ elections.addEventListener('click', funcElections);
 
 const date = document.querySelector('.date button');
 
-const funcDate = ()=> {
+/* const funcDate = ()=> {
     const jour = (prompt('indiquer le jour en nombres'));
     const mois = (prompt('indiquer le mois en nombres'));
     const annee = (prompt("indiquer l'année en nombres"));
 
     let bissextile = (annee %4 === 0) && (annee % 100 != 0 ) && (annee % 400 === 0 );
-    let MoisMax = 
+    let MoisMax = ;
     if (mois <= 12 || (jour < 31 &&  (mois === 1 || mois === 3 || mois === 5 || mois === 7 || mois === 8 || mois === 10 || mois === 12)) || (jour < 30 &&  (mois === 4 || mois === 6 || mois === 9 || mois === 11 )) || (mois === 2 && (jour < 29 || ) )) {
         alert('date valide');
     } else {
         alert('date PAS valide');
     }
-}
+} 
 
-date.addEventListener('click', funcDate);
+date.addEventListener('click', funcDate);*/
 
-/* const assurance = document.querySelector('.assurance button');
+const assurance = document.querySelector('.assurance button');
 
 const funcAssurance = ()=> {
+    const age = parseInt(prompt('quel âge avez vous ?'));
+    const titulaire = parseInt(prompt('depuis combien de temps êtes vous titulaire de votre permis ?'));
+    const accidents = parseInt(prompt("de combien d'accidents avez vous été responsable dans votre vie ?"));
+    const fidelite = parseInt(prompt("depuis combien de temps etes vous fidele ?"));
+    if (/* age >= 25 && titulaire >= 2 && accidents === 0 && */ fidelite >= 1 && accidents < 3) {
+        alert('vous beneficiez du tarif BLEU');
+    } else if (age >= 25 && titulaire >= 2 && accidents === 0) {
+        alert('vous beneficiez du tarif VERT');
+    }else if (((age < 25 && titulaire >= 2) || (age >= 25 && titulaire < 2)) && accidents === 0) {
+        alert('vous beneficiez du tarif ORANGE');
+    } else if ((age < 25 && titulaire < 2 && accidents === 0) || (((age >= 25 && titulaire < 2) || (age < 25 && titulaire >= 2)) && accidents === 1) || ( age >= 25 && titulaire >= 2 && accidents === 2)) {
+        alert('vous beneficiez du tarif ROUGE');
+    } else {
+        alert('vas te faire assurer ailleurs, en étant poli');
+    }
+}
 
-} */
+
+
+assurance.addEventListener('click', funcAssurance);
